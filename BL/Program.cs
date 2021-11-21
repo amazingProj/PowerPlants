@@ -6,7 +6,9 @@ namespace BL
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SearchEngine engine = new SearchEngine();
+            engine.ParseString("All the power plants in ISR");
+            int x = 1;
         }
     }
 }

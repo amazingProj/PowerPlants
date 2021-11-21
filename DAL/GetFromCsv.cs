@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace DAL
 {
-    class GetFromCsv : IGetFromCsvInterface
+    public class GetFromCsv : IGetFromCsvInterface
     {
         private BE.DataReader CsvReader;
 
@@ -19,7 +19,7 @@ namespace DAL
 
         public List<dynamic> FilterByCountry(string countryName)
         {
-            return CsvReader.GetAllRecords().Where((x) => x[0].equals(countryName) || x[1].equals(countryName)).ToList();
+            return CsvReader.GetAllRecords().Where((x) => x.Get(0).Equals(countryName)).ToList();
         }
 
         public List<dynamic> FilterByNumberDifferentFuel(int number)

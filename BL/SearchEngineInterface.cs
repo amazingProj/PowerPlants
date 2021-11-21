@@ -6,8 +6,10 @@ namespace BL
 {
     public interface ISearchEngineInterface
     {
-        public List<dynamic> ParseString(String SearchString);
+        public List<dynamic> ParseString(string SearchString);
 
-        public 
+        public List<dynamic> ClusteringString(string[] SearchString);
+
+
     }
 }

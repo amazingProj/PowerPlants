@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text;
 
 namespace BE
 {
@@ -14,7 +15,14 @@ namespace BE
         public CsvReader()
         {
 
-            PathDir = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            PathDir = Directory.GetCurrentDirectory();
+
+            StringBuilder relativePath = new StringBuilder();
+            
+            for (int i = 0; i < 4; ++i)
+            {
+                PathDir = System.IO.Directory.GetParent(PathDir).FullName;
+            }
 
             File = PathDir + @"\global_power_plant_database.csv";
 
